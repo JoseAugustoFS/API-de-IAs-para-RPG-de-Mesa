@@ -1,5 +1,2 @@
 Flask
 Gunicorn
-google-generativeai
-requests
-json
