@@ -49,4 +49,4 @@ def api():
 	else:
 		return None
 
-app.run(debug=True, port=8001)
+app.run(host='0.0.0.0')
