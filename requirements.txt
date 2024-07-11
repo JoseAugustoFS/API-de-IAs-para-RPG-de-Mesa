@@ -1,3 +1,2 @@
 Flask
 Gunicorn
-!pip install -q -U google-generativeai
