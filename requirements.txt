@@ -1,1 +1,5 @@
-!pip install -q -U google-generativeai
+Flask
+Gunicorn
+google-generativeai
+requests
+json
