@@ -2,3 +2,4 @@ Flask
 Gunicorn
 requests
 google-generativeai
+flask_cors
