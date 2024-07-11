@@ -6,6 +6,10 @@ import google.generativeai as genai
 
 app = Flask(__name__)
 
+from flask_cors import CORS, cross_origin
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 Stable_Diffusion_API_KEY = 'wEJBYH63AOu6zDfWQMXoiYS7vHptnOqhRSDFY0yZDWncUIiDUecVqfV9qQUa'
 Google_AI_Studio_API_KEY = 'AIzaSyC6zxB47mEhvS2SIik7DEiTtmfWmlW7c6Q'
 
