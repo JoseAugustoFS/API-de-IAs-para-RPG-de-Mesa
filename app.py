@@ -27,7 +27,7 @@ def ias_integradas(ideia):
         # Solicitação à API externa com timeout
         response = requests.post(
             "https://simple-api.glif.app",
-            json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [sinopse]},
+            json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
             headers={"Authorization": "Bearer " + Glif_API_KEY},
             timeout=40  # Adicionando um timeout de 40 segundos
         )
