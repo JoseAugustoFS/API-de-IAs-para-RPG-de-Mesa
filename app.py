@@ -35,7 +35,7 @@ def ias_integradas(ideia):
                     "https://simple-api.glif.app",
                     json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
                     headers={"Authorization": "Bearer " + Glif_API_KEY},
-                    timeout=20  # Aumentando o timeout para 20 segundos
+                    timeout=40  # Aumentando o timeout para 40 segundos
                 )
 
                 # Verificação do status da resposta
