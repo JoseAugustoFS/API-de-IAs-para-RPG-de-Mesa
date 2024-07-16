@@ -25,7 +25,7 @@ def ias_integradas(ideia):
 	sinopse = model.generate_content("Desenvolva a seguinte ideia como um cenário de RPG de mesa (sem inventar nomes) escreva esse cenário como uma sinopse de dois parágrafos e só, no final dê apenas algumas dicas para o mestre: "+ideia).text
 	response = requests.post(
     		"https://simple-api.glif.app",
-    		json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [sinopse]},
+    		json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
     		headers={"Authorization": "Bearer "+Glif_API_KEY},
 	)
 	#imagens sao 16:9
