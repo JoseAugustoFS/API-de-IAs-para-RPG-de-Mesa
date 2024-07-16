@@ -31,9 +31,8 @@ def ias_integradas(ideia):
                 print(f"Tentativa {attempt + 1} de solicitação à API Glif...")
                 response = requests.post(
                     "https://simple-api.glif.app",
-                    json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
+                    json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [sinopse]},
                     headers={"Authorization": "Bearer " + Glif_API_KEY},
-                    timeout=40  # Aumentando o timeout para 40 segundos
                 )
 
                 # Verificação do status da resposta
