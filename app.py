@@ -29,7 +29,7 @@ def ias_integradas(ideia):
     		headers={"Authorization": "Bearer "+Glif_API_KEY},
 	)
 	#imagens sao 16:9
-	imagem = json.loads(response.text)['output']+""
+	imagem = json.loads(response.text)['output']
 	resposta = {'sinopse': sinopse,'imagem':imagem}
 	return jsonify(resposta)
   
