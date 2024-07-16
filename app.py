@@ -2,18 +2,19 @@ import os
 import requests
 import json
 from flask import Flask, request, jsonify
-#!pip install -q -U google-generativeai
 import google.generativeai as genai
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
-from flask_cors import CORS, cross_origin
+
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 Glif_API_KEY = os.environ.get('Glif_API_KEY')
 Google_AI_Studio_API_KEY = os.environ.get('Google_AI_Studio_API_KEY')
+Senha_API = os.environ.get('Senha_API')
 
 genai.configure(api_key=Google_AI_Studio_API_KEY)
 generation_config = { "candidate_count": 1, "temperature": 0.5,}
@@ -37,7 +38,7 @@ def ias_integradas(ideia):
 def api():
 	ideia = request.json['ideia']
 	senha = request.json['senha']
-	if senha=="123":
+	if senha==Senha_API:
 		return ias_integradas(ideia)
 	else:
 		return None
