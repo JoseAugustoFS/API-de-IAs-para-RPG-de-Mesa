@@ -1,7 +1,6 @@
 import os
 import requests
 import json
-import time
 from flask import Flask, request, jsonify
 import google.generativeai as genai
 from flask_cors import CORS, cross_origin
@@ -20,8 +19,6 @@ generation_config = {"candidate_count": 1, "temperature": 0.5}
 safety_settings = {"HARASSMENT": "BLOCK_NONE", "HATE": "BLOCK_NONE", "SEXUAL": "BLOCK_NONE", "DANGEROUS": "BLOCK_NONE"}
 model = genai.GenerativeModel(model_name="gemini-1.0-pro", generation_config=generation_config, safety_settings=safety_settings)
 
-
-
 def ias_integradas(ideia):
     try:
         # Geração de sinopse
@@ -31,6 +28,7 @@ def ias_integradas(ideia):
         max_attempts = 5
         for attempt in range(max_attempts):
             try:
+                print(f"Tentativa {attempt + 1} de solicitação à API Glif...")
                 response = requests.post(
                     "https://simple-api.glif.app",
                     json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
@@ -40,6 +38,7 @@ def ias_integradas(ideia):
 
                 # Verificação do status da resposta
                 if response.status_code == 200:
+                    print(f"Solicitação bem-sucedida na tentativa {attempt + 1}")
                     break
                 else:
                     print(f"Tentativa {attempt + 1} falhou: {response.status_code}, {response.text}")
@@ -58,7 +57,6 @@ def ias_integradas(ideia):
     except Exception as e:
         print(f"Erro no processamento da ideia: {str(e)}")
         return jsonify({'erro': 'Erro no processamento da ideia'}), 500
-
 
 @app.route('/', methods=["POST"])
 def api():
