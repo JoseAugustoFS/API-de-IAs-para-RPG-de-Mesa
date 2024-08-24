@@ -13,6 +13,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 Glif_API_KEY = os.environ.get('Glif_API_KEY')
 Google_AI_Studio_API_KEY = os.environ.get('Google_AI_Studio_API_KEY')
 Senha_API = os.environ.get('Senha_API')
+ID_Glif = os.environ.get('ID_Glif')
 
 genai.configure(api_key=Google_AI_Studio_API_KEY)
 generation_config = {"candidate_count": 1, "temperature": 0.5}
@@ -31,7 +32,7 @@ def ias_integradas(ideia):
                 print(f"Tentativa {attempt + 1} de solicitação à API Glif...")
                 response = requests.post(
                     "https://simple-api.glif.app",
-                    json={"id": "clpn2mwdr000yd8clc9chw75s", "inputs": [ideia]},
+                    json={"id": ID_Glif, "inputs": [ideia]},
                     headers={"Authorization": "Bearer " + Glif_API_KEY},
                 )
 
