@@ -15,6 +15,10 @@ Google_AI_Studio_API_KEY = os.environ.get('Google_AI_Studio_API_KEY')
 Senha_API = os.environ.get('Senha_API')
 ID_Glif = os.environ.get('ID_Glif')
 
+@app.route('/wake_up', methods=['GET'])
+def wake_up():
+    return 'API is awake', 200
+
 genai.configure(api_key=Google_AI_Studio_API_KEY)
 generation_config = {"candidate_count": 1, "temperature": 0.5}
 safety_settings = {"HARASSMENT": "BLOCK_NONE", "HATE": "BLOCK_NONE", "SEXUAL": "BLOCK_NONE", "DANGEROUS": "BLOCK_NONE"}
