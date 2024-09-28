@@ -66,8 +66,7 @@ Também gostaríamos de saber se você gostaria de uma ferramenta de suporte par
 
 Por fim, compartilhe conosco qualquer comentário, sugestão ou necessidade adicional que você gostaria de ver atendida para melhorar a criação e gestão das suas aventuras de RPG.
 
-
-A partir da pesquisa acima, gere um texto contando uma historia inicial, dando dicas para o mestre do RPG com o tema: """
+A partir da pesquisa acima, desenvolva a seguinte ideia como um cenário de RPG de mesa (sem inventar nomes) escreva esse cenário como uma sinopse de dois parágrafos e só, no final dê apenas algumas dicas para o mestre: """
 
 def ias_integradas(ideia):
     try:
